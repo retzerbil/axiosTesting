@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { axiosGet } from './services/servicesBase';
 import { movieList } from './services/movieService';
 const apiURL = "http://www.omdbapi.com/?i=tt3896198&apikey=" + import.meta.env.VITE_MY_API_KEY + "&s=matrix"
 //only worked with vite..
