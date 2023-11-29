@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+//only worked with vite..
 axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=6424148a&s=matrix")
 .then((response)=>{
 response.data;
