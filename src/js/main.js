@@ -1,16 +1,17 @@
 import axios from 'axios';
+import { axiosGet } from './services/servicesBase';
+import { movieList } from './services/movieService';
+const apiURL = "http://www.omdbapi.com/?i=tt3896198&apikey=" + import.meta.env.VITE_MY_API_KEY + "&s=matrix"
 //only worked with vite..
-axios.get("http://www.omdbapi.com/?i=tt3896198&apikey="+import.meta.env.VITE_MY_API_KEY+"&s=matrix")
-.then((response)=>{
-response.data;
-console.log(response);
-});
+
+axios.get(apiURL)
+  .then((response) => {
+    response.data;
+    console.log(response.data.Search);
+  });
 
 //axios async await;
-
-window.addEventListener("load", async () =>{
-    const response2 = await axios.get("http://www.omdbapi.com/?i=tt3896198&apikey="+import.meta.env.VITE_MY_API_KEY+"&s=matrix");
-response2.data;
-
-console.log(response2);
+window.addEventListener("load", async () => {
+  const list =  await movieList(apiURL);
+  console.log(list);
 });
