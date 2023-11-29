@@ -9,7 +9,7 @@ axios.get(apiURL)
     console.log(response.data.Search);
   });
 
-//axios async await;
+//js services.
 window.addEventListener("load", async () => {
   const list =  await movieList(apiURL);
   console.log(list);
